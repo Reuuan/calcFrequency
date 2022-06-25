@@ -9,12 +9,13 @@ int main()
     FILE *file = malloc(sizeof(FILE));
     file = fopen("test_in.txt", "r");
     char *buffer = malloc(sizeof(FILE));
-
+    
     bst *tree = bstree_create(" ", 0);
     bst *node = NULL;
+
     while (!feof(file))
     {
-        fgets(buffer, sizeof(FILE), file);
+        fscanf(file,"%s",buffer);
 
         for (int i = 0; buffer[i] != '\n'; i++)
         {
@@ -30,9 +31,5 @@ int main()
             printf("%s\n", word);
         }
     }
-
-    // fgets(buffer, sizeof(FILE), file);
-    // printf("%s\n", buffer);
-
     return 0;
 }
